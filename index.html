@@ -85,13 +85,13 @@
       // ------------------------------------------------------------------------------------
 
       // calling json single person
-      $(".btn").click(function (event) {
-        $.getJSON("emp.json", function (emp) {
-          $(".result").html("<p> Id: " + emp.id + "</p>");
-          $(".result").append("<p>Name : " + emp.name + "</p>");
-          $(".result").append("<p> Designation: " + emp.desgination + "</p>");
-        });
-      });
+//       $(".btn").click(function (event) {
+//         $.getJSON("emp.json", function (emp) {
+//           $(".result").html("<p> Id: " + emp.id + "</p>");
+//           $(".result").append("<p>Name : " + emp.name + "</p>");
+//           $(".result").append("<p> Designation: " + emp.desgination + "</p>");
+//         });
+//       });
 
       // more then 1 person
       // $(".btn").click(function (event) {
@@ -113,20 +113,20 @@
       //   });
       // });
 
-      // fetching from json placholder
-      // $(".btn").click(function (event) {
-      //   fetch("https://jsonplaceholder.typicode.com/posts")
-      //     .then((response) => response.json())
-      //     .then((post) => {
-      //       for (let emp in post) {
-      //         if (emp <= 9) {
-      //           $(".result").append(
-      //             `<p> ${post[emp].id + ": " + post[emp].title} </p>`
-      //           );
-      //         }
-      //       }
-      //     });
-      // });
+      fetching from json placholder
+      $(".btn").click(function (event) {
+        fetch("https://jsonplaceholder.typicode.com/posts")
+          .then((response) => response.json())
+          .then((post) => {
+            for (let emp in post) {
+              if (emp <= 9) {
+                $(".result").append(
+                  `<p> ${post[emp].id + ": " + post[emp].title} </p>`
+                );
+              }
+            }
+          });
+      });
 
       // ------------------------------------------------------------------------------------
       // promises
