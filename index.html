@@ -1,0 +1,169 @@
+<!--Task - jquery ajax, async/await & promise -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JQuery Ajax</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <button class="btn">Click me</button>
+    <ul class="ul">
+      <li>Shreyesh 1</li>
+      <li>Vishal 1</li>
+      <li>Devashish 1</li>
+      <li>Alpesh 1</li>
+    </ul>
+    <div class="result"></div>
+    <div class="text"></div>
+    <script>
+      // $(".btn").click(function () {
+      //   $(".ul").hide();
+      // });
+      // ------------------------------------------------------------------------------------
+
+      //   $(".btn").click(function () {
+      //     $(".ul").toggle();
+      //   });
+      // ------------------------------------------------------------------------------------
+
+      //   $(".btn").click(function () {
+      //     $("li").add("ul").css("background-color", "red");
+      //   });
+      // ------------------------------------------------------------------------------------
+
+      //   $(".btn").click(function () {
+      //     $(".ul").load("test2.html");
+      //   });
+      // ------------------------------------------------------------------------------------
+
+      // $(".btn").click(function () {
+      //   $.ajax({
+      //     url: "test2.html",
+      //     success: function (result) {
+      //       $(".result").load("test2.html");
+      //       console.log("success");
+      //     },
+      //   });
+      // });
+      // ------------------------------------------------------------------------------------
+
+      //   Whenever an Ajax request is about to be sent, jQuery checks whether there are any other outstanding Ajax requests. If none are in progress, jQuery triggers the ajaxStart
+
+      //   $(document).ajaxStart(function () {
+      //     $(".text").text("Triggered ajaxStart handler.");
+      //   });
+      //   $(".btn").click(function () {
+      //     $(".result").load("test2.html");
+      //   });
+      // ------------------------------------------------------------------------------------
+
+      // when ajax request completes
+      //   $(document).ajaxComplete(function () {
+      //     $(".text").text("Triggered ajax complete handler.");
+      //   });
+
+      //   $(".btn").click(function () {
+      //     $(".result").load("test2.html");
+      //   });
+      // ------------------------------------------------------------------------------------
+
+      //   when u want to show error
+      //   $(document).ajaxError(function () {
+      //     $(".text").text("Triggered ajax error handler.");
+      //   });
+
+      //   $(".btn").click(function () {
+      //     $(".result").load("ajam/test2.html");
+      //   });
+      // ------------------------------------------------------------------------------------
+
+      // calling json
+      // single person
+      // $(".btn").click(function (event) {
+      //   $.getJSON("emp.json", function (emp) {
+      //     $(".result").html("<p> Id: " + emp.id + "</p>");
+      //     $(".result").append("<p>Name : " + emp.name + "</p>");
+      //     $(".result").append("<p> Designation: " + emp.desgination + "</p>");
+      //   });
+      // });
+
+      // more then 1 person
+      // $(".btn").click(function (event) {
+      //   $.getJSON("emp3.json", function (emp) {
+      //     for (let person in emp) {
+      //       console.log(emp[person].name);
+      //     }
+      //   });
+      // });
+
+      // $(".btn").click(function (event) {
+      //   $.getJSON("emp2.json", function (data) {
+      //     $.each(data.person, function () {
+      //       $(".result").append("<p> Name: " + this.name + "</p>");
+      //       $(".result").append(
+      //         "<p> designation: " + this.designation + "</p>"
+      //       );
+      //     });
+      //   });
+      // });
+
+      // fetching from json placholder
+      // $(".btn").click(function (event) {
+      //   fetch("https://jsonplaceholder.typicode.com/posts")
+      //     .then((response) => response.json())
+      //     .then((post) => {
+      //       for (let emp in post) {
+      //         if (emp <= 9) {
+      //           $(".result").append(
+      //             `<p> ${post[emp].id + ": " + post[emp].title} </p>`
+      //           );
+      //         }
+      //       }
+      //     });
+      // });
+
+      // ------------------------------------------------------------------------------------
+      // promises
+      // function emp() {
+      //   return new Promise(function (resolve, reject) {
+      //     const empName = 'shreyesh';
+      //     if (empName === 'shreyesh') {
+      //       console.log("answer is correct");
+      //       resolve();
+      //     } else {
+      //       console.log("answer is incorrect");
+      //       reject();
+      //     }
+      //   });
+      // }
+
+      // emp()
+      //   .then(function () {
+      //     console.log("You did great job");
+      //   })
+      //   .catch(function (e) {
+      //     console.log("you did wrong " + e);
+      //   });
+
+      // ------------------------------------------------------------------------------------
+      // async & await
+      // async function func() {
+      //   const response = await fetch("https://api.github.com/users");
+      //   console.log("before response");
+      //   const users = await response.json();
+      //   console.log("after response");
+      //   return users;
+      // }
+
+      // func().then((data) => console.log(data));
+    </script>
+  </body>
+</html>
