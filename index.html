@@ -56,7 +56,6 @@
       // ------------------------------------------------------------------------------------
 
       //   Whenever an Ajax request is about to be sent, jQuery checks whether there are any other outstanding Ajax requests. If none are in progress, jQuery triggers the ajaxStart
-
       //   $(document).ajaxStart(function () {
       //     $(".text").text("Triggered ajaxStart handler.");
       //   });
@@ -85,15 +84,14 @@
       //   });
       // ------------------------------------------------------------------------------------
 
-      // calling json
-      // single person
-      // $(".btn").click(function (event) {
-      //   $.getJSON("emp.json", function (emp) {
-      //     $(".result").html("<p> Id: " + emp.id + "</p>");
-      //     $(".result").append("<p>Name : " + emp.name + "</p>");
-      //     $(".result").append("<p> Designation: " + emp.desgination + "</p>");
-      //   });
-      // });
+      // calling json single person
+      $(".btn").click(function (event) {
+        $.getJSON("emp.json", function (emp) {
+          $(".result").html("<p> Id: " + emp.id + "</p>");
+          $(".result").append("<p>Name : " + emp.name + "</p>");
+          $(".result").append("<p> Designation: " + emp.desgination + "</p>");
+        });
+      });
 
       // more then 1 person
       // $(".btn").click(function (event) {
