@@ -14,7 +14,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
-    <button class="btn">Click me</button>
+    <button class="btn1">Ajax btn</button>
+    <button class="btn2">JSON btn</button>
+    
     <ul class="ul">
       <li>Shreyesh 1</li>
       <li>Vishal 1</li>
@@ -24,27 +26,27 @@
     <div class="result"></div>
     <div class="text"></div>
     <script>
-      // $(".btn").click(function () {
+      // $(".btn1").click(function () {
       //   $(".ul").hide();
       // });
       // ------------------------------------------------------------------------------------
 
-      //   $(".btn").click(function () {
+      //   $(".btn1").click(function () {
       //     $(".ul").toggle();
       //   });
       // ------------------------------------------------------------------------------------
 
-      //   $(".btn").click(function () {
+      //   $(".btn1").click(function () {
       //     $("li").add("ul").css("background-color", "red");
       //   });
       // ------------------------------------------------------------------------------------
 
-      //   $(".btn").click(function () {
+      //   $(".btn1").click(function () {
       //     $(".ul").load("test2.html");
       //   });
       // ------------------------------------------------------------------------------------
 
-      // $(".btn").click(function () {
+      // $(".btn1").click(function () {
       //   $.ajax({
       //     url: "test2.html",
       //     success: function (result) {
@@ -59,7 +61,7 @@
       //   $(document).ajaxStart(function () {
       //     $(".text").text("Triggered ajaxStart handler.");
       //   });
-      //   $(".btn").click(function () {
+      //   $(".btn1").click(function () {
       //     $(".result").load("test2.html");
       //   });
       // ------------------------------------------------------------------------------------
@@ -69,7 +71,7 @@
       //     $(".text").text("Triggered ajax complete handler.");
       //   });
 
-      //   $(".btn").click(function () {
+      //   $(".btn1").click(function () {
       //     $(".result").load("test2.html");
       //   });
       // ------------------------------------------------------------------------------------
@@ -79,13 +81,13 @@
       //     $(".text").text("Triggered ajax error handler.");
       //   });
 
-      //   $(".btn").click(function () {
+      //   $(".btn1").click(function () {
       //     $(".result").load("ajam/test2.html");
       //   });
       // ------------------------------------------------------------------------------------
 
       // calling json single person
-//       $(".btn").click(function (event) {
+//       $(".btn2").click(function (event) {
 //         $.getJSON("emp.json", function (emp) {
 //           $(".result").html("<p> Id: " + emp.id + "</p>");
 //           $(".result").append("<p>Name : " + emp.name + "</p>");
@@ -94,7 +96,7 @@
 //       });
 
       // more then 1 person
-      // $(".btn").click(function (event) {
+      // $(".btn2").click(function (event) {
       //   $.getJSON("emp3.json", function (emp) {
       //     for (let person in emp) {
       //       console.log(emp[person].name);
@@ -102,7 +104,7 @@
       //   });
       // });
 
-      // $(".btn").click(function (event) {
+      // $(".btn2").click(function (event) {
       //   $.getJSON("emp2.json", function (data) {
       //     $.each(data.person, function () {
       //       $(".result").append("<p> Name: " + this.name + "</p>");
@@ -113,20 +115,20 @@
       //   });
       // });
 
-      fetching from json placholder
-      $(".btn").click(function (event) {
-        fetch("https://jsonplaceholder.typicode.com/posts")
-          .then((response) => response.json())
-          .then((post) => {
-            for (let emp in post) {
-              if (emp <= 9) {
-                $(".result").append(
-                  `<p> ${post[emp].id + ": " + post[emp].title} </p>`
-                );
-              }
-            }
-          });
-      });
+//       fetching from json placholder
+//       $(".btn2").click(function (event) {
+//         fetch("https://jsonplaceholder.typicode.com/posts")
+//           .then((response) => response.json())
+//           .then((post) => {
+//             for (let emp in post) {
+//               if (emp <= 9) {
+//                 $(".result").append(
+//                   `<p> ${post[emp].id + ": " + post[emp].title} </p>`
+//                 );
+//               }
+//             }
+//           });
+//       });
 
       // ------------------------------------------------------------------------------------
       // promises
