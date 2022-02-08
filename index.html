@@ -288,20 +288,20 @@
           $.each(data.marks, function () {
             const m = this;
             async function f1() {
-              let mat = await m.maths;
-              let eng = await m.english;
-              let sci = await m.science;
-              let hin = await m.hindi;
-              let geo = await m.geography;
+              const mat = await m.maths;
+              const eng = await m.english;
+              const sci = await m.science;
+              const hin = await m.hindi;
+              const geo = await m.geography;
 
               const reducer = (previousValue, currentValue) =>
                 previousValue + currentValue;
 
-              const total1 = mat.reduce(reducer);
-              const total2 = eng.reduce(reducer);
-              const total3 = sci.reduce(reducer);
-              const total4 = hin.reduce(reducer);
-              const total5 = geo.reduce(reducer);
+              const total1 = await mat.reduce(reducer);
+              const total2 = await eng.reduce(reducer);
+              const total3 = await sci.reduce(reducer);
+              const total4 = await hin.reduce(reducer);
+              const total5 = await geo.reduce(reducer);
 
               $(".result11").append(
                 `<p> Maths: ${mat.join("+")} Total = ${total1} </p>`
