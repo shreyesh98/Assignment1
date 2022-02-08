@@ -244,7 +244,7 @@
       }
 
       // ------------------------------------------------------------------------------------
-      // async & await
+      // async & await;
       async function func() {
         const response = await fetch("https://api.github.com/users");
         console.log("before response");
@@ -252,34 +252,77 @@
         console.log("after response");
         return users;
       }
-
       func().then((data) => console.log(data));
       // ------------------------------------------------------------------------------------
 
       //addition
+      // $(".btn11").click(function () {
+      //   $.getJSON("emp4.json", function (data) {
+      //     $.each(data.marks, function () {
+      //       const value = [
+      //         this.maths,
+      //         this.english,
+      //         this.science,
+      //         this.hindi,
+      //         this.geography,
+      //       ];
+
+      //       $(".result11").append(`<p> Maths: ${value[0]} </p>`);
+      //       $(".result11").append(`<p> English: ${value[1]} </p>`);
+      //       $(".result11").append(`<p> Science: ${value[2]} </p>`);
+      //       $(".result11").append(`<p> Hindi: ${value[3]} </p>`);
+      //       $(".result11").append(`<p> Geography: ${value[4]} </p>`);
+
+      //       const reducer = (previousValue, currentValue) =>
+      //         previousValue + currentValue;
+
+      //       $(".result11").append(
+      //         "<p> Total: " + value.reduce(reducer) + "</p>"
+      //       );
+      //     });
+      //   });
+      // });
+
       $(".btn11").click(function () {
         $.getJSON("emp4.json", function (data) {
           $.each(data.marks, function () {
-            const value = [
-              this.maths,
-              this.english,
-              this.science,
-              this.hindi,
-              this.geography,
-            ];
+            const m = this;
+            async function f1() {
+              const mat = await m.maths;
+              const eng = await m.english;
+              const sci = await m.science;
+              const hin = await m.hindi;
+              const geo = await m.geography;
 
-            $(".result11").append(`<p> Maths: ${value[0]} </p>`);
-            $(".result11").append(`<p> English: ${value[1]} </p>`);
-            $(".result11").append(`<p> Science: ${value[2]} </p>`);
-            $(".result11").append(`<p> Hindi: ${value[3]} </p>`);
-            $(".result11").append(`<p> Geography: ${value[4]} </p>`);
+              const reducer = (previousValue, currentValue) =>
+                previousValue + currentValue;
 
-            const reducer = (previousValue, currentValue) =>
-              previousValue + currentValue;
+              const total1 = mat.reduce(reducer);
+              const total2 = eng.reduce(reducer);
+              const total3 = sci.reduce(reducer);
+              const total4 = hin.reduce(reducer);
+              const total5 = geo.reduce(reducer);
 
-            $(".result11").append(
-              "<p> Total: " + value.reduce(reducer) + "</p>"
-            );
+              $(".result11").append(
+                `<p> Maths: ${mat.join("+")} Total = ${total1} </p>`
+              );
+              $(".result11").append(
+                `<p> English: ${eng.join("+")} Total = ${total2} </p>`
+              );
+              $(".result11").append(
+                `<p> Science: ${sci.join("+")} Total = ${total3} </p>`
+              );
+              $(".result11").append(
+                `<p> Hindi: ${hin.join("+")} Total = ${total4} </p>`
+              );
+              $(".result11").append(
+                `<p> Geography: ${geo.join("+")} Total = ${total5} </p>`
+              );
+              console.log("Async with addition");
+            }
+            console.log("first");
+            f1();
+            console.log("last");
           });
         });
       });
