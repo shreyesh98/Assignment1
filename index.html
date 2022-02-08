@@ -297,26 +297,30 @@
               const reducer = (previousValue, currentValue) =>
                 previousValue + currentValue;
 
-              const total1 = await mat.reduce(reducer);
-              const total2 = await eng.reduce(reducer);
-              const total3 = await sci.reduce(reducer);
-              const total4 = await hin.reduce(reducer);
-              const total5 = await geo.reduce(reducer);
-
               $(".result11").append(
-                `<p> Maths: ${mat.join("+")} Total = ${total1} </p>`
+                `<p> Maths: ${mat.join("+")} Total = ${mat.reduce(
+                  reducer
+                )} </p>`
               );
               $(".result11").append(
-                `<p> English: ${eng.join("+")} Total = ${total2} </p>`
+                `<p> English: ${eng.join("+")} Total = ${eng.reduce(
+                  reducer
+                )} </p>`
               );
               $(".result11").append(
-                `<p> Science: ${sci.join("+")} Total = ${total3} </p>`
+                `<p> Science: ${sci.join("+")} Total = ${sci.reduce(
+                  reducer
+                )} </p>`
               );
               $(".result11").append(
-                `<p> Hindi: ${hin.join("+")} Total = ${total4} </p>`
+                `<p> Hindi: ${hin.join("+")} Total = ${hin.reduce(
+                  reducer
+                )} </p>`
               );
               $(".result11").append(
-                `<p> Geography: ${geo.join("+")} Total = ${total5} </p>`
+                `<p> Geography: ${geo.join("+")} Total = ${geo.reduce(
+                  reducer
+                )} </p>`
               );
               console.log("Async with addition");
             }
