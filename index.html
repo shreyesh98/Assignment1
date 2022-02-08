@@ -288,11 +288,11 @@
           $.each(data.marks, function () {
             const m = this;
             async function f1() {
-              const mat = await m.maths;
-              const eng = await m.english;
-              const sci = await m.science;
-              const hin = await m.hindi;
-              const geo = await m.geography;
+              let mat = await m.maths;
+              let eng = await m.english;
+              let sci = await m.science;
+              let hin = await m.hindi;
+              let geo = await m.geography;
 
               const reducer = (previousValue, currentValue) =>
                 previousValue + currentValue;
