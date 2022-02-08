@@ -322,10 +322,10 @@
                   reducer
                 )} </p>`
               );
-              console.log("Async with addition");
             }
+
             console.log("first");
-            f1();
+            f1().then((data) => console.log(data));
             console.log("last");
           });
         });
