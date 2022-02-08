@@ -297,10 +297,17 @@
               const reducer = (previousValue, currentValue) =>
                 previousValue + currentValue;
 
+              // $(".result11").append(
+              //   `<p> Maths: ${mat.join("+")} Total = ${mat.reduce(
+              //     reducer
+              //   )} </p>`
+              // );
               $(".result11").append(
-                `<p> Maths: ${mat.join("+")} Total = ${mat.reduce(
-                  reducer
-                )} </p>`
+                "<p> Maths: " +
+                  mat.join("+") +
+                  " Total = " +
+                  mat.reduce(reducer) +
+                  " </p>"
               );
               $(".result11").append(
                 `<p> English: ${eng.join("+")} Total = ${eng.reduce(
@@ -325,7 +332,7 @@
             }
 
             console.log("first");
-            f1().then((data) => console.log(data));
+            f1();
             console.log("last");
           });
         });
