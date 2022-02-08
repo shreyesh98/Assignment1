@@ -1,5 +1,11 @@
 {
   "marks": [
-    { "maths": 70, "english": 50, "science": 60, "hindi": 80, "geography": 70 }
+    {
+      "maths": [10, 10, 10, 10, 10],
+      "english": [20, 20, 20, 20, 20],
+      "science": [30, 30, 30, 30, 30],
+      "hindi": [40, 40, 40, 40, 40],
+      "geography": [50, 50, 50, 50, 50]
+    }
   ]
 }
