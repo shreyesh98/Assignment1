@@ -283,48 +283,165 @@
       //   });
       // });
 
-      $(".btn11").click(function () {
-        $.getJSON("emp4.json", function (data) {
-          $.each(data.marks, function () {
-            const m = this;
-            async function f1() {
-              const mat = await m.maths;
-              const eng = await m.english;
-              const sci = await m.science;
-              const hin = await m.hindi;
-              const geo = await m.geography;
+      // $(".btn11").click(function () {
+      //   $.getJSON("emp4.json", function (data) {
+      //     $.each(data.marks, function () {
+      //       const m = this;
+      //       async function f1() {
+      //         const mat = await m.maths;
+      //         const eng = await m.english;
+      //         const sci = await m.science;
+      //         const hin = await m.hindi;
+      //         const geo = await m.geography;
 
+      //         const reducer = (previousValue, currentValue) =>
+      //           previousValue + currentValue;
+
+      //         const total1 = await mat.reduce(reducer);
+      //         const total2 = await eng.reduce(reducer);
+      //         const total3 = await sci.reduce(reducer);
+      //         const total4 = await hin.reduce(reducer);
+      //         const total5 = await geo.reduce(reducer);
+
+      //         $(".result11").append(
+      //           `<p> Maths: ${mat.join("+")} Total = ${total1} </p>`
+      //         );
+
+      //         $(".result11").append(
+      //           `<p> English: ${eng.join("+")} Total = ${total2} </p>`
+      //         );
+      //         $(".result11").append(
+      //           `<p> Science: ${sci.join("+")} Total = ${total3} </p>`
+      //         );
+      //         $(".result11").append(
+      //           `<p> Hindi: ${hin.join("+")} Total = ${total4} </p>`
+      //         );
+      //         $(".result11").append(
+      //           `<p> Geography: ${geo.join("+")} Total = ${total5} </p>`
+      //         );
+      //         console.log("Async with addition");
+      //       }
+
+      //       console.log("first");
+      //       f1();
+      //       console.log("last");
+      //     });
+      //   });
+      // });
+
+      // $(".btn11").click(function () {
+      //   // english
+      //   $.getJSON("eng.json", function (data) {
+      //     async function eng() {
+      //       for (let eng in data) {
+      //         const reducer = (previousValue, currentValue) =>
+      //           previousValue + currentValue;
+      //         const all = await data[eng].join("+");
+      //         const total = await data[eng].reduce(reducer);
+      //         $(".result11").append(`<p>English: ${all} Total: ${total}<p>`);
+      //         console.log(all, total);
+      //       }
+      //     }
+      //     console.log("first");
+      //     eng();
+      //     console.log("last");
+      //   });
+      //   // hindi
+      //   $.getJSON("hin.json", function (data) {
+      //     async function hin() {
+      //       for (let hin in data) {
+      //         const reducer = (previousValue, currentValue) =>
+      //           previousValue + currentValue;
+      //         const all = await data[hin].join("+");
+      //         const total = await data[hin].reduce(reducer);
+      //         $(".result11").append(`<p>Hindi: ${all} Total: ${total}<p>`);
+      //         console.log(all, total);
+      //       }
+      //     }
+      //     console.log("first");
+      //     hin();
+      //     console.log("last");
+      //   });
+      // });
+
+      $(".btn11").click(function () {
+        // english
+        $.getJSON("eng.json", function (data) {
+          async function eng() {
+            for (let eng in data) {
               const reducer = (previousValue, currentValue) =>
                 previousValue + currentValue;
-
-              const total1 = await mat.reduce(reducer);
-              const total2 = await eng.reduce(reducer);
-              const total3 = await sci.reduce(reducer);
-              const total4 = await hin.reduce(reducer);
-              const total5 = await geo.reduce(reducer);
-
-              $(".result11").append(
-                `<p> Maths: ${mat.join("+")} Total = ${total1} </p>`
-              );
-
-              $(".result11").append(
-                `<p> English: ${eng.join("+")} Total = ${total2} </p>`
-              );
-              $(".result11").append(
-                `<p> Science: ${sci.join("+")} Total = ${total3} </p>`
-              );
-              $(".result11").append(
-                `<p> Hindi: ${hin.join("+")} Total = ${total4} </p>`
-              );
-              $(".result11").append(
-                `<p> Geography: ${geo.join("+")} Total = ${total5} </p>`
-              );
-              console.log("Promise's with addition");
+              const all = await data[eng].join("+");
+              const total = await data[eng].reduce(reducer);
+              $(".result11").append(`<p>English: ${all} Total: ${total}<p>`);
+              console.log(all, total);
             }
+          }
+          // hindi
+          $.getJSON("hin.json", function (data) {
+            async function hin() {
+              for (let hin in data) {
+                const reducer = (previousValue, currentValue) =>
+                  previousValue + currentValue;
+                const all = await data[hin].join("+");
+                const total = await data[hin].reduce(reducer);
+                $(".result11").append(`<p>Hindi: ${all} Total: ${total}<p>`);
+                console.log(all, total);
+              }
+            }
+            // geography
+            $.getJSON("geo.json", function (data) {
+              async function geo() {
+                for (let geo in data) {
+                  const reducer = (previousValue, currentValue) =>
+                    previousValue + currentValue;
+                  const all = await data[geo].join("+");
+                  const total = await data[geo].reduce(reducer);
+                  $(".result11").append(
+                    `<p>Geography: ${all} Total: ${total}<p>`
+                  );
+                  console.log(all, total);
+                }
+              }
+              // maths
+              $.getJSON("math.json", function (data) {
+                async function math() {
+                  for (let math in data) {
+                    const reducer = (previousValue, currentValue) =>
+                      previousValue + currentValue;
+                    const all = await data[math].join("+");
+                    const total = await data[math].reduce(reducer);
+                    $(".result11").append(
+                      `<p>Maths: ${all} Total: ${total}<p>`
+                    );
+                    console.log(all, total);
+                  }
+                }
+                // science
+                $.getJSON("sci.json", function (data) {
+                  async function sci() {
+                    for (let sci in data) {
+                      const reducer = (previousValue, currentValue) =>
+                        previousValue + currentValue;
+                      const all = await data[sci].join("+");
+                      const total = await data[sci].reduce(reducer);
+                      $(".result11").append(
+                        `<p>Science: ${all} Total: ${total}<p>`
+                      );
+                      console.log(all, total);
+                    }
+                  }
 
-            console.log("first");
-            f1();
-            console.log("last");
+                  console.log("first");
+                  eng();
+                  hin();
+                  geo();
+                  math();
+                  sci();
+                  console.log("last");
+                });
+              });
+            });
           });
         });
       });
